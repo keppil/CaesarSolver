@@ -3,6 +3,10 @@ package com.keppil.caesarsolver;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+/**
+ * The different supported languages. For each language, a frequency file is expected to be found on the path.
+ *
+ */
 public enum Language {
 
 	SWEDISH("se"), ENGLISH("en");
@@ -20,6 +24,10 @@ public enum Language {
 		}
 	}
 
+	/**
+	 * Gets the {@link Alphabet} corresponding to this language.
+	 * @return The alphabet.
+	 */
 	public Alphabet getAlphabet() {
 		return alphabet;
 	}

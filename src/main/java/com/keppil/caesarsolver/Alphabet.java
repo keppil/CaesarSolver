@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ import java.util.Map;
  */
 public class Alphabet {
 
-	private final Map<Character, Double> frequencies = new LinkedHashMap<>();
+	private final Map<Character, Double> frequencies;
 
 	/**
 	 * Initializes a new Alphabet from a frequency file.
@@ -32,14 +33,17 @@ public class Alphabet {
 	public Alphabet(String frequencyFile) throws IOException, URISyntaxException {
 		Path filePath = Paths.get(this.getClass().getClassLoader().getResource(frequencyFile).toURI());
 		List<String> lines = Files.readAllLines(filePath, Charset.forName("UTF-8"));
+		Map<Character, Double> frequencies = new LinkedHashMap<>();
 		for (String line : lines) {
 			String[] tokens = line.split("\\s+");
 			frequencies.put(tokens[0].charAt(0), Double.parseDouble(tokens[1]));
 		}
+		this.frequencies = Collections.unmodifiableMap(frequencies);
 	}
 
 	/**
-	 * Gets an ordered list of all the characters of this alphabet. 
+	 * Gets an ordered list of all the characters of this alphabet.
+	 * 
 	 * @return A list of the characters.
 	 */
 	public List<Character> getCharacters() {
