@@ -28,7 +28,7 @@ public class CaesarSolver {
 		Path filePath = Paths.get(CaesarSolver.class.getClassLoader().getResource(fileName).toURI());
 		String text = Files.lines(filePath, Charset.forName("UTF-8")).reduce(String::concat).get();
 		log.info(String.format("Retrieved text '%s'...", fileName));
-		CryptoText cryptoText = new CryptoText(text, alphabet).shiftBy(new Random().nextInt(26));
+		CryptoText cryptoText = new CryptoText(text, alphabet).shiftBy(new Random().nextInt(alphabet.getCharacters().size()));
 		log.info("Shifted text by an random amount...");
 		CaesarSolver caesarSolver = new CaesarSolver(cryptoText);
 		log.info("Created solver...");
