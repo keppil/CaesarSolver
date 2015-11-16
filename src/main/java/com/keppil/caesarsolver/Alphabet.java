@@ -49,5 +49,14 @@ public class Alphabet {
 	public List<Character> getCharacters() {
 		return new ArrayList<>(frequencies.keySet());
 	}
+	
+	/**
+	 * Gets the frequencies of this alphabet.
+	 * 
+	 * @return A map from character to the frequency (in percent).
+	 */
+	public Map<Character, Double> getFrequencies() {
+		return frequencies;
+	}
 
 }

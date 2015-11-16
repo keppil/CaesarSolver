@@ -11,9 +11,9 @@ public class AlphabetTest {
 	
 	@Test
 	public void getCharactersReturnsAllCharactersInTheCorrectOrder() throws Exception {
-		Alphabet alphabet = new Alphabet("frequency-test.txt");
+		Alphabet alphabet = new Alphabet("frequency-bi.txt");
 		List<Character> actual= alphabet.getCharacters();
-		List<Character> expected = Arrays.asList('A', 'S');
+		List<Character> expected = Arrays.asList('B', 'I');
 		assertEquals(expected, actual);
 	}
 }
