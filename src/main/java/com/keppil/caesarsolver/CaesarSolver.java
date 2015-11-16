@@ -22,7 +22,6 @@ public class CaesarSolver {
 	public static void main(String[] args) throws Exception {
 		solvePuzzle("texts/hellman.txt", Language.SWEDISH.getAlphabet());
 		solvePuzzle("texts/pearljam.txt", Language.ENGLISH.getAlphabet());
-		solvePuzzle("texts/bibi.txt", new Alphabet("frequency-bi.txt"));
 	}
 
 	private static void solvePuzzle(String fileName, Alphabet alphabet) throws Exception {
